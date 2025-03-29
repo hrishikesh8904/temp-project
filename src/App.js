@@ -1,6 +1,18 @@
 import "./App.css";
 import LoginPage from "./components/LoginPage.jsx";
-import bgImage from "./assets/img1.jpg";
+import SignupPage from "./components/SignupPage.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LoginPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />,
+  },
+]);
 function App() {
   return (
     <div
@@ -14,7 +26,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <LoginPage></LoginPage>
+      <RouterProvider router={router} />
     </div>
   );
 }
