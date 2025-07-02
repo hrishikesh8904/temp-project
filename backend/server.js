@@ -3,7 +3,7 @@ dotenv.config();
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
-const app = express();
+import { app, server } from "./lib/socket.js";
 import { logger, logEvents } from "./middleware/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
 import cors from "cors";
@@ -42,7 +42,7 @@ app.use((req, res) => {
 });
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server Listening on ${PORT}`);
   connectDB();
 });

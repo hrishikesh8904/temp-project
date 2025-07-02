@@ -10,7 +10,8 @@ import { useEffect } from "react";
 import { Loader } from "lucide-react";
 import ProfilePage from "./components/ProfilePage.jsx";
 function App() {
-  const { authUser, checkAuth, checkingAuth } = useAuthStore();
+  const { authUser, checkAuth, checkingAuth, onlineUsers } = useAuthStore();
+  console.log(onlineUsers);
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
